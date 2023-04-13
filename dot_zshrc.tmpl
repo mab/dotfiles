@@ -113,3 +113,9 @@ source $ZSH/oh-my-zsh.sh
 {{ if eq .chezmoi.os "darwin" }}
 export PATH=$PATH:~/bin
 {{ end }}
+
+export AQUA_ROOT_DIR="$HOME/.local/share/aquaproj-aqua"
+export AQUA_GLOBAL_CONFIG="$HOME/.config/aqua/aqua.yaml"
+export AQUA_CONFIG="$HOME/.config/aqua/aqua.yaml"
+
+export PATH="$AQUA_ROOT_DIR/bin:$PATH"
