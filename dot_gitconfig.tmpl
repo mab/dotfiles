@@ -1,6 +1,17 @@
 [user]
 	name = {{ .name }}
 	email = {{ .email }}
+	signingkey = {{ .signingkey }}
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+	allowedSignersFile = "~/.config/git/allowed_signers"
+
+[commit]
+	gpgsign = true
 
 [push]
 	autoSetupRemote = true
