@@ -113,10 +113,6 @@ alias kns="konf ns"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-{{ if eq .chezmoi.os "darwin" }}
-export PATH=$PATH:~/bin
-{{ end }}
-
 export AQUA_ROOT_DIR="$HOME/.local/share/aquaproj-aqua"
 export AQUA_GLOBAL_CONFIG="$HOME/.config/aqua/aqua.yaml"
 export PATH="$AQUA_ROOT_DIR/bin:$PATH"
