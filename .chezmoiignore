@@ -1,2 +1,6 @@
 # Oh My ZSH
 **/cache/**
+
+{{- if ne .chezmoi.arch "arm64" }}
+.zprofile
+{{- end }}
