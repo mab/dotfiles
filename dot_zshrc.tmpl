@@ -124,6 +124,5 @@ eval "$(direnv hook zsh)"
 # konf-go
 source <(konf-go shellwrapper zsh)
 source <(konf completion zsh)
-export KUBECONFIG=$(konf --silent set -) # Open last konf on new shell session
 
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
