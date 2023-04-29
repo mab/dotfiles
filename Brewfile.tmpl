@@ -10,4 +10,7 @@ cask "boop"
 cask "brave-browser"
 cask "font-hack-nerd-font"
 cask "iterm2"
+{{ if eq .laptopType "private" }}
+cask "intellij-idea-ce"
+{{ end }}
 cask "stats"
