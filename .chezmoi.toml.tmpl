@@ -1,8 +1,10 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $name :=promptStringOnce . "name" "Name" -}}
 {{- $signingkey :=promptStringOnce . "signingkey" "git public signing key" -}}
+{{- $laptopType :=promptStringOnce . "laptopType" "LaptopType e.g. private, work" -}}
 
 [data]
     name =  {{ $name | quote }}
     email = {{ $email | quote }}
     signingkey = {{ $signingkey | quote }}
+    laptopType = {{ $laptopType | quote }}
