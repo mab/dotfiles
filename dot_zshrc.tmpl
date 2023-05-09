@@ -122,6 +122,7 @@ export PATH="$AQUA_ROOT_DIR/bin:$PATH"
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 eval "$(direnv hook zsh)"
+eval "$(fnm env --use-on-cd)"
 
 # konf-go
 source <(konf-go shellwrapper zsh)
