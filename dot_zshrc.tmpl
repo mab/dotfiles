@@ -106,9 +106,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+{{ if eq .laptopType "work" }}
 alias k="kubectl"
 alias kctx="konf set"
 alias kns="konf ns"
+{{ end }}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -126,9 +128,11 @@ eval "$(direnv hook zsh)"
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"
 
+{{ if eq .laptopType "work" }}
 # konf-go
 source <(konf-go shellwrapper zsh)
 source <(konf completion zsh)
+{{ end }}
 
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
