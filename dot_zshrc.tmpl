@@ -137,5 +137,5 @@ source <(konf-go shellwrapper zsh)
 source <(konf completion zsh)
 {{ end }}
 
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh 2> /dev/null)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
