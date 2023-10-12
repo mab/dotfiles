@@ -17,3 +17,5 @@ export AQUA_GLOBAL_CONFIG="$XDG_CONFIG_HOME/aqua/aqua.yaml"
 export AQUA_ROOT_DIR="$XDG_DATA_HOME/aquaproj-aqua"
 export PATH="$AQUA_ROOT_DIR/bin:$PATH"
 
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
+
