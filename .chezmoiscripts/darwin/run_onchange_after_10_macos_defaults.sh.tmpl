@@ -1,0 +1,32 @@
+#!{{ lookPath "bash" }}
+set -eufo pipefail
+
+source ~/.config/utils.sh
+
+print_info "Set macOS defaults"
+
+function defaults_dock() {
+    print_info "Set dock defaults"
+
+    # Automatically hide and show the Dock
+    defaults write com.apple.dock autohide -bool true
+
+    # Set the icon size of Dock items in pixels
+    defaults write com.apple.dock tilesize -int 50
+
+    # Disable recent applications and remove list of recent apps
+    defaults write com.apple.dock show-recents -bool false
+    defaults write com.apple.dock recent-apps -array ""
+
+    killall Dock
+}
+
+
+function main() {
+    defaults_dock
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    main
+fi
+
