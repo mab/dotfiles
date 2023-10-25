@@ -14,10 +14,43 @@ function defaults_dock() {
     # Set the icon size of Dock items in pixels
     defaults write com.apple.dock tilesize -int 50
 
+    {{ if eq .laptopType "work" }}
+    # Remove app icons from the dock
+    defaults write com.apple.dock persistent-apps -array ""
+    {{ end }}
+
     # Disable recent applications and remove list of recent apps
     defaults write com.apple.dock show-recents -bool false
     defaults write com.apple.dock recent-apps -array ""
 
+    function dock_item() {
+        local app_file_path="$1"
+        printf '
+        <dict>
+            <key>tile-data</key>
+                <dict>
+                    <key>file-data</key>
+                        <dict>
+                            <key>_CFURLString</key><string>%s</string>
+                            <key>_CFURLStringType</key><integer>0</integer>
+                        </dict>
+                </dict>
+        </dict>', "${app_file_path}"
+    }
+
+    # Add apps to the dock
+    {{ if eq .laptopType "work" }}
+    defaults write com.apple.dock persistent-apps -array \
+      "$(dock_item /Applications/Brave\ Browser.app)" \
+      "$(dock_item /Applications/iTerm.app)" \
+      "$(dock_item ~/Library/Application\ Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/223.8617.56/IntelliJ\ IDEA.app)" \
+      "$(dock_item /Applications/Microsoft\ OneNote.app)" \
+      "$(dock_item /Applications/Microsoft\ To\ Do.app)" \
+      "$(dock_item /Applications/Microsoft\ Teams\ classic.app)" \
+      "$(dock_item /Applications/Microsoft\ Outlook.app)"
+    {{ end }}
+
+    # Restart dock
     killall Dock
 }
 
