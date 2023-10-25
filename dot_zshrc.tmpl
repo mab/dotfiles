@@ -107,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
+alias sed=gsed
 {{ if eq .laptopType "work" }}
 alias k="kubectl"
 alias kctx="konf set"
@@ -125,6 +126,7 @@ export RANCHER_DESKTOP="$HOME/.rd/bin"
 export PATH="$RANCHER_DESKTOP:$PATH"
 export PATH="$HOME/.jbang/bin:$PATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/bin/:$PATH"
 
 export BAT_THEME="Solarized (dark)"
 
