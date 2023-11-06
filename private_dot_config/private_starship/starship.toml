@@ -3,3 +3,19 @@
 
 # Inserts a blank line between shell prompts
 add_newline = true
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch) ]($style)'
+symbol = " "
+style = '#839b04'
+
+# https://github.com/romkatv/powerlevel10k/tree/master/gitstatus
+[git_status]
+format = '([$ahead_behind$stashed$staged$modified$untracked]($style))'
+style = '#839b04'
+ahead = '⇡${count} '
+behind = '⇣${count} '
+stashed = '*${count} '
+staged = '+${count} '
+modified = '!${count} '
+untracked = '?${count} '
