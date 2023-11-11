@@ -2,6 +2,14 @@
 
 This [dotfiles](https://github.com/mab/dotfiles) repositoriy is managed with [chezmoi](https://www.chezmoi.io/).
 
+## Keymap
+
+### tmux
+
+| Action                | Shortcut |
+|-----------------------|:--------:|
+| Leader key \<LEADER\> |    ⌃S    |
+
 ## Acknowledgements
 
 This project is inspired by:
