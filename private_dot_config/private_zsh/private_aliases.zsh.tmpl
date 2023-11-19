@@ -1,0 +1,11 @@
+# Aliases
+
+alias l="ls -la"
+alias vim=nvim
+
+{{ if eq .laptopType "work" }}
+alias k="kubectl"
+alias kctx="konf set"
+alias kns="konf ns"
+{{ end }}
+

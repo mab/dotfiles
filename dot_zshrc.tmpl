@@ -3,16 +3,6 @@ setopt HIST_IGNORE_SPACE
 autoload -Uz compinit
 compinit
 
-# Aliases
-alias l="ls -la"
-alias sed=gsed
-alias vim=nvim
-{{ if eq .laptopType "work" }}
-alias k="kubectl"
-alias kctx="konf set"
-alias kns="konf ns"
-{{ end }}
-
 # XDG User Directories
 # https://wiki.archlinux.org/title/XDG_Base_Directory
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -39,6 +29,9 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=true
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
 export SSH_AUTH_SOCK=~/.1password/agent.sock
+
+# Aliases
+source $XDG_CONFIG_HOME/zsh/aliases.zsh
 
 # Evaluation
 eval "$(starship init zsh)"
