@@ -2,6 +2,12 @@
 .zprofile
 {{- end }}
 
+# Ingore all scripts by default
+.chezmoiscripts/*/**
+# Apply scripts for host os and universal
+!.chezmoiscripts/{{ .chezmoi.os }}/**
+!.chezmoiscripts/universal/**
+
 # Only for Darwin
 {{- if ne .chezmoi.os "darwin" }}
 ~/Library/Application\ Support
