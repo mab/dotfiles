@@ -1,7 +1,13 @@
 # Shell options
 setopt HIST_IGNORE_SPACE
-autoload -Uz compinit
-compinit
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # XDG User Directories
 # https://wiki.archlinux.org/title/XDG_Base_Directory
