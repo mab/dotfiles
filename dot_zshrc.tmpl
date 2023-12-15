@@ -44,6 +44,8 @@ eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"
+eval "$(rtx activate zsh)"
+
 {{ if eq .laptopType "work" }}
 # konf-go
 source <(konf-go shellwrapper zsh)
