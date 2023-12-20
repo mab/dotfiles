@@ -5,6 +5,11 @@ source ~/.config/utils.sh
 
 print_info "Set macOS defaults"
 
+function language() {
+    print_info "Set default language"
+    defaults write -g AppleLanguages -array en-DE de-DE
+}
+
 function defaults_dock() {
     print_info "Set dock defaults"
 
@@ -66,6 +71,7 @@ function defaults_dock() {
 
 
 function main() {
+    language
     defaults_dock
 }
 
