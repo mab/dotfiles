@@ -1,0 +1,8 @@
+Host *
+  IdentityAgent ~/.1password/agent.sock
+{{ if eq .laptopType "work" }}
+Host gdi01r22vm002.zeiss.org
+  ForwardAgent yes
+  User maba
+{{ end }}
+

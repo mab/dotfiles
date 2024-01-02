@@ -12,3 +12,9 @@
 {{- if ne .chezmoi.os "darwin" }}
 ~/Library/Application\ Support
 {{- end }}
+
+#Only for Work
+{{- if ne .laptopType "work" }}
+.config/1Password/**
+{{- end}}
+

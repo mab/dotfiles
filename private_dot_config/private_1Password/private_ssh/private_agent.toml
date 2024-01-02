@@ -1,0 +1,11 @@
+# This is the 1Password SSH agent config file, which allows you to customize the
+# behavior of the SSH agent running on this machine.
+#  https://developer.1password.com/docs/ssh/agent/config
+[[ssh-keys]]
+vault = "Private"
+
+# k3s
+[[ssh-keys]]
+item = "yi2j2wxgkvjq4dxu3x4t3xcqka"
+vault = "pxgp7j2opm7ui4ynmaujuwqdki"
+
