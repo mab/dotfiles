@@ -10,6 +10,14 @@ function language() {
     defaults write -g AppleLanguages -array en-DE de-DE
 }
 
+function defaults_trackpad() {
+  print_info "Set trackpad defaults"
+
+  # Trackpad enable tap
+  defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+}
+
 function defaults_dock() {
     print_info "Set dock defaults"
 
@@ -71,8 +79,9 @@ function defaults_dock() {
 
 
 function main() {
-    language
-    defaults_dock
+  language
+  defaults_trackpad
+  defaults_dock
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
