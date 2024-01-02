@@ -41,6 +41,7 @@ source $XDG_CONFIG_HOME/zsh/aliases.zsh
 
 # Evaluation
 eval "$(starship init zsh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(direnv hook zsh)"
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"
