@@ -41,7 +41,7 @@ source $XDG_CONFIG_HOME/zsh/aliases.zsh
 
 # Evaluation
 eval "$(starship init zsh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(brew shellenv)"
 eval "$(direnv hook zsh)"
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"
@@ -54,4 +54,18 @@ source <(konf completion zsh)
 {{ end }}
 
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh 2> /dev/null)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == *$HOMEBREW_PREFIX/opt/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}$HOMEBREW_PREFIX/opt/fzf/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+
