@@ -46,7 +46,7 @@ eval "$(brew shellenv)"
 eval "$(direnv hook zsh)"
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
 
 {{ if eq .laptopType "work" }}
 # konf-go
