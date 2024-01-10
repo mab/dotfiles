@@ -1,3 +1,7 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
+#
 disableStartupPopups: true
 quitOnTopLevelReturn: true
 promptToReturnFromSubprocess: false
+notARepository: quit
