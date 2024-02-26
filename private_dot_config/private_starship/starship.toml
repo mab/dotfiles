@@ -4,6 +4,9 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
+[docker_context]
+disabled = true
+
 [git_branch]
 format = '[$symbol$branch(:$remote_branch) ]($style)'
 symbol = " "
@@ -19,3 +22,13 @@ stashed = '*${count} '
 staged = '+${count} '
 modified = '!${count} '
 untracked = '?${count} '
+
+[golang]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[package]
+disabled = true
+
