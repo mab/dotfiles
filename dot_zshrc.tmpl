@@ -4,10 +4,10 @@ setopt HIST_IGNORE_SPACE
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
 fi
+
+autoload -Uz compinit
+compinit
 
 # XDG User Directories
 # https://wiki.archlinux.org/title/XDG_Base_Directory
@@ -51,10 +51,7 @@ eval "$(mise activate zsh)"
 {{ if eq .laptopType "work" }}
 # konf-go
 source <(konf-go shellwrapper zsh)
-source <(konf completion zsh)
 {{ end }}
-
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh 2> /dev/null)
 
 # Setup fzf
 # ---------
@@ -62,11 +59,10 @@ if [[ ! "$PATH" == *$HOMEBREW_PREFIX/opt/fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}$HOMEBREW_PREFIX/opt/fzf/bin"
 fi
 
-# Auto-completion
-# ---------------
-[[ $- == *i* ]] && source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh" 2> /dev/null
-
 # Key bindings
 # ------------
 source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+
+# Completions
+source $XDG_CONFIG_HOME/zsh/completions.zsh
 
