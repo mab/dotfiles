@@ -27,3 +27,9 @@ cask "rectangle"
 cask "intellij-idea-ce"
 cask "thunderbird"
 {{ end }}
+
+{{ if eq .laptopType "work" }}
+brew "dnsmasq"
+brew "postgresql"
+{{ end }}
+
