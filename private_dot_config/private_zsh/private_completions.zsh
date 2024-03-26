@@ -3,3 +3,6 @@
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh 2> /dev/null)
 [[ $commands[konf] ]] && source <(konf completion zsh 2> /dev/null)
 [[ $commands[mise] ]] && source <(mise completion zsh 2> /dev/null)
+[[ $commands[helm] ]] && source <(helm completion zsh 2> /dev/null)
+[[ $commands[helmfile] ]] && source <(helmfile completion zsh 2> /dev/null)
+
