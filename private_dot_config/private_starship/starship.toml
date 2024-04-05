@@ -7,6 +7,9 @@ add_newline = true
 [docker_context]
 disabled = true
 
+[dotnet]
+disabled = true
+
 [git_branch]
 format = '[$symbol$branch(:$remote_branch) ]($style)'
 symbol = " "
