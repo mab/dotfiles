@@ -29,6 +29,9 @@ untracked = '?${count} '
 [golang]
 disabled = true
 
+[kubernetes]
+disabled = false
+
 [nodejs]
 disabled = true
 
