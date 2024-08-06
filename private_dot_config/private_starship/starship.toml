@@ -31,6 +31,8 @@ disabled = true
 
 [kubernetes]
 disabled = false
+format = '[$symbol$context( \($namespace\))]($style) in '
+style = 'cyan bold'
 
 [nodejs]
 disabled = true
