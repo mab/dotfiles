@@ -2,4 +2,5 @@
 java = 'temurin-21'
 maven = 'latest'
 node = ['lts']
+python = '3'
 
