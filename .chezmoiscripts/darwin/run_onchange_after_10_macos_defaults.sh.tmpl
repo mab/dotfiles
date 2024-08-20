@@ -64,12 +64,13 @@ function defaults_dock() {
     # Add apps to the dock
     {{ if eq .laptopType "work" }}
     defaults write com.apple.dock persistent-apps -array \
+      "$(dock_item /Applications/Google\ Chrome.app)" \
       "$(dock_item /Applications/Brave\ Browser.app)" \
       "$(dock_item /Applications/iTerm.app)" \
       "$(dock_item /Applications/IntelliJ\ IDEA.app)" \
       "$(dock_item /Applications/Microsoft\ OneNote.app)" \
       "$(dock_item /Applications/Microsoft\ To\ Do.app)" \
-      "$(dock_item /Applications/Microsoft\ Teams\ \(work\ or\ school\).app)" \
+      "$(dock_item /Applications/Microsoft\ Teams.app)" \
       "$(dock_item /Applications/Microsoft\ Outlook.app)"
     {{ end }}
 
