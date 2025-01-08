@@ -66,4 +66,6 @@ source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
 # Completions
 source $XDG_CONFIG_HOME/zsh/completions.zsh
 
+{{ if eq .laptopType "work" }}
 source $XDG_CONFIG_HOME/op/plugins.sh
+{{ end }}
