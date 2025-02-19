@@ -16,8 +16,7 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
-      "automergeStrategy": "squash",
-      "ignoreTests": true
+      "automergeStrategy": "squash"
     }
   ]
 }
