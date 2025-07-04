@@ -42,6 +42,7 @@ source $XDG_CONFIG_HOME/zsh/aliases.zsh
 
 # Evaluation
 eval "$(starship init zsh)"
+source <(fzf --zsh)
 eval "$(brew shellenv)"
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
@@ -51,16 +52,6 @@ eval "$(mise activate zsh)"
 # konf-go
 source <(konf-go shellwrapper zsh)
 {{ end }}
-
-# Setup fzf
-# ---------
-if [[ ! "$PATH" == *$HOMEBREW_PREFIX/opt/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}$HOMEBREW_PREFIX/opt/fzf/bin"
-fi
-
-# Key bindings
-# ------------
-source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
 
 # Completions
 source $XDG_CONFIG_HOME/zsh/completions.zsh
