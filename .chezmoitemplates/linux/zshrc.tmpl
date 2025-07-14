@@ -23,3 +23,7 @@ export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
 # Aliases
 source $XDG_CONFIG_HOME/zsh/aliases.zsh
+
+# Evaluation
+eval "$(starship init zsh)"
+source <(fzf --zsh)
