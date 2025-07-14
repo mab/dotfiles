@@ -1,5 +1,5 @@
 {{ if or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin") -}}
-#!{{ lookPath "bash" }}
+#!{{ lookPath "zsh" }}
 
 set -eufo pipefail
 
