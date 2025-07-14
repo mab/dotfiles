@@ -9,7 +9,7 @@ source ~/.config/utils.sh
 
 if cmd_exists "brew"; then
     print_info "Brew bundle"
-    brew bundle --no-lock
+    brew bundle --no-upgrade
 else
     ask_for_confirmation "Would you like to install Homebrew (Brew)?"
 
@@ -19,7 +19,7 @@ else
             print_success "Brew has been successfully installed!"
             brew analytics off
             print_info "Brew bundle"
-            brew bundle --no-lock
+            brew bundle --no-upgrade
         else
             print_error "Brew not installed."
         fi
