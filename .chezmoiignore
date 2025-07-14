@@ -1,4 +1,5 @@
 README.md
+LICENSE
 {{- if ne .chezmoi.arch "arm64" }}
 .zprofile
 {{- end }}
@@ -13,6 +14,8 @@ README.md
 {{- if ne .chezmoi.os "darwin" }}
 ~/Library/Application\ Support
 .config/utils.sh
+.1password/**
+Brewfile
 {{- end }}
 
 #Only for Work
