@@ -13,6 +13,7 @@ if [ ! $(command -v aqua) ] || [ $(aqua -v | head -n1 | cut -d" " -f3 | sed "s/^
   chmod +x aqua-installer
   ./aqua-installer -v $current_aqua_version
   rm aqua-installer
+  source ~/.zshrc
 fi
 
 # This script will run whenever I added something to .config/aqua/aqua.yaml
