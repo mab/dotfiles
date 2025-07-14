@@ -1,4 +1,3 @@
-{{ if eq .chezmoi.os "darwin" -}}
 #!{{ lookPath "bash" }}
 set -eufo pipefail
 
@@ -27,4 +26,3 @@ else
         print_info "Brew not installed."
     fi
 fi
-{{ end -}}

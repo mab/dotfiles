@@ -1,3 +1,4 @@
+README.md
 {{- if ne .chezmoi.arch "arm64" }}
 .zprofile
 {{- end }}
@@ -11,10 +12,10 @@
 # Only for Darwin
 {{- if ne .chezmoi.os "darwin" }}
 ~/Library/Application\ Support
+.config/utils.sh
 {{- end }}
 
 #Only for Work
 {{- if ne .laptopType "work" }}
 .config/1Password/**
 {{- end}}
-
