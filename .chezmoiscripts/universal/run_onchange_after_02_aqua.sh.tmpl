@@ -12,6 +12,7 @@ if [ ! $(command -v aqua) ] || [ $(aqua -v | head -n1 | cut -d" " -f3 | sed "s/^
   echo "9a5afb16da7191fbbc0c0240a67e79eecb0f765697ace74c70421377c99f0423  aqua-installer" | sha256sum -c -
   chmod +x aqua-installer
   ./aqua-installer -v $current_aqua_version
+  rm aqua-installer
 fi
 
 # This script will run whenever I added something to .config/aqua/aqua.yaml
@@ -20,4 +21,3 @@ export AQUA_GLOBAL_CONFIG={{ .chezmoi.homeDir }}/.config/aqua/aqua.yaml
 echo "Upgrading aqua"
 aqua install --all --only-link
 {{ end -}}
-
