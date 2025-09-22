@@ -49,6 +49,7 @@ eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 
 {{ if eq .laptopType "work" }}
+eval "$(gh copilot alias -- zsh)"
 # konf-go
 source <(konf-go shellwrapper zsh)
 {{ end }}
