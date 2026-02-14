@@ -3,4 +3,5 @@ java = 'temurin-21'
 maven = 'latest'
 node = ['lts']
 python = '3'
+rust = "latest"
 usage = 'latest'
