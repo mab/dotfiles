@@ -50,7 +50,14 @@ eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 
 {{ if eq .laptopType "work" }}
-eval "$(gh copilot alias -- zsh)"
+if command -v gh &>/dev/null; then
+  if ! gh extension list 2>/dev/null | grep -q copilot; then
+    gh extension install github/gh-copilot 2>/dev/null || true
+  fi
+  if gh extension list 2>/dev/null | grep -q copilot; then
+    eval "$(gh copilot alias -- zsh)"
+  fi
+fi
 # konf-go
 source <(konf-go shellwrapper zsh)
 {{ end }}
