@@ -141,7 +141,7 @@ mkd() {
 }
 
 print_error() {
-    print_in_red "  [✖] $1 $2\n"
+    print_in_red "  [✖] $1 ${2:-}\n"
 }
 
 print_in_green() {
