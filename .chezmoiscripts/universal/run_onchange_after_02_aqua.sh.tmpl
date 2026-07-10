@@ -4,7 +4,11 @@
 set -eufo pipefail
 
 # renovate: depName=aquaproj/aqua datasource=github-releases
-current_aqua_version=v2.60.1
+current_aqua_version=v2.60.2
+
+# Ensure aqua bin dir is in PATH
+export AQUA_ROOT_DIR="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}"
+export PATH="$AQUA_ROOT_DIR/bin:$PATH"
 
 if [ ! $(command -v aqua) ] || [ $(aqua -v | head -n1 | cut -d" " -f3 | sed "s/^/v/") != $current_aqua_version ]; then
   echo "Installing aqua"
