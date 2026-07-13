@@ -52,6 +52,14 @@ eval "$(mise activate zsh)"
 {{ if eq .laptopType "work" }}
 # konf-go
 source <(konf-go shellwrapper zsh)
+
+# Disable spotlight for node_modules directories
+yarn() {
+  command yarn "$@"
+  if [ -d "node_modules" ]; then
+    touch node_modules/.metadata_never_index
+  fi
+}
 {{ end }}
 
 # Completions
